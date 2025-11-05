@@ -8,7 +8,7 @@ soup = BeautifulSoup(url, 'lxml')
 #players = soup.find_all('tr')
 #print(players)
 players = soup.find_all('tr')[1:]
-st.write(players[0])
+#st.write(players[0])
 team_name = []
 years = []
 wins = []
@@ -21,5 +21,5 @@ for i in players:
     years.append(year)
     wins.append(win)
  
-    data = pd.DataFrame({'Team Name': team_name, 'Year': years, 'Wins': wins})
-    st.dataframe(data)
+data = pd.DataFrame({'Team Name': team_name, 'Year': years, 'Wins': wins})
+st.dataframe(data)
